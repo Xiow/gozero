@@ -1,0 +1,7 @@
+Name: greet-api
+Host: 0.0.0.0
+Port: 8888
+XXX:  GZW
+RedisAddr:  localhost:6379
+MysqlAddr:  root:123456@(localhost)/gormtest?charset=utf8mb4&parseTime=True&loc=Local
+

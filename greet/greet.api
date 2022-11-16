@@ -1,0 +1,33 @@
+type LoginResponse {
+	Name     string `json:"name"`
+	Password string `json:"password"`
+	Token    string `json:"token"`
+}
+type LoginRequest {
+	Name     string `json:"name"`
+	Password string `json:"password"`
+}
+type UserRegisterResponse {
+	Message string `json:"message"`
+	Code    int    `json:"code"`
+}
+type UserRegisterRequest {
+	Name string `json:"name"`
+	Age  int    `json:"age"`
+}
+@server(
+	middleware:XwMiddleware
+)
+service greet-api {
+	@handler UserLogin
+	post /user/login(LoginRequest) returns (LoginResponse)
+	
+	@handler UserRegister
+	post /user/register(UserRegisterRequest) returns(UserRegisterResponse)
+}
+
+service greet-api {
+	@handler BjRegister
+	post /bj/register(UserRegisterRequest) returns (UserRegisterResponse)
+	
+}
